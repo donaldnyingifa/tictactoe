@@ -10,6 +10,7 @@ html {
 header {
   text-align: center;
   margin: 50px;
+  padding: 0;
 }
 
 #head {
@@ -22,20 +23,78 @@ header {
 h1 #result {
   font-size: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: chocolate;
+  color: rgb(211, 105, 29);
   text-align: center;
   margin-bottom: 30px;
 }
 
 canvas {
-  border: 1px solid dodgerblue;
+  display: block;
+  float: left;
+  border: 3px solid dodgerblue;
   background-color: lightgoldenrodyellow;
   text-align: center;
 }
 
 #game {
   position: relative;
-  width: 640px;
+  width: 650px;
   height: 320px;
   margin: 0 auto;
+}
+
+#tic {
+  border: 3px solid dodgerblue;
+  position: relative;
+  margin: 0 auto;
+  height: 318px;
+  width: 318px;
+  display: inline-block;
+  float: left;
+}
+
+#rules {
+  position: relative;
+  width: 318px;
+  height: 318px;
+  text-align: center;
+  display: inline-block;
+  float: right;
+}
+
+p {
+  font-size: 26px;
+  margin: 15px;
+  color: crimson;
+}
+
+h2 {
+  font-size: 35px;
+  color: crimson;
+}
+
+button {
+  margin-top: 25px;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: crimson;
+  color: #fff;
+  font-family: cursive;
+  border: 1px solid black;
+  border-radius: 5px;
+
+  /* box-shadow: h-shadow v-shadow blur spread rgb(58, 53, 53); */
+  box-shadow: 3px 2px 0.5px 1px rgb(58, 53, 53, 0.7);
+}
+
+canvas:hover {
+  background-color: rgb(223, 224, 230);
+}
+
+button:hover {
+  background: rgb(233, 18, 61);
+  cursor: pointer;
+  
 }
