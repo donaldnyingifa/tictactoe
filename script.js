@@ -19,7 +19,7 @@ window.onload = function () {
   let gameOver = false;
   const human = "X";
   const ai = "O";
-  const result = {};
+  let result = {};
 
   const speak = (msg) => {
     const sp = new SpeechSynthesisUtterance(msg);
@@ -148,7 +148,7 @@ window.onload = function () {
           if (turn > 9 && gameOver !== true) {
             document.getElementById("result").innerHTML =
               "GAME OVER! IT WAS A DRAW";
-            speak("Though game I will admit");
+            speak("A competitive game I will admit");
             speak("It is a draw! ");
             return;
           }
@@ -168,7 +168,7 @@ window.onload = function () {
   function emptyBoxes(newSymbol) {
     let j = 0;
     let empty = [];
-    for (let i = 0; i < newSymbol; i++) {
+    for (let i = 0; i < newSymbol.length; i++) {
       if (newSymbol[i] !== "X" && newSymbol[i] !== "O") {
         empty[j] = i;
         j++;
@@ -183,8 +183,11 @@ window.onload = function () {
   function playAI() {
     //symbol = ['X', '','O', 'X', 'O','X', '','O','O']
     //ai = 'O'
+    // nextMove = {id:1, score: 10}
     let nextMove = miniMax(symbol, ai); //object that stores id of next move and score of the box for next move
-    let nextId = `canvas${nextMove.id + 1}`;
+    
+    let nextId = "canv" + (nextMove.id + 1);
+    //let nextId = `canvas${nextMove.id + 1}`;
     box = document.getElementById(nextId);
     ctx = box.getContext("2d");
     if (gameOver === false) {
@@ -195,9 +198,9 @@ window.onload = function () {
         if (winnerCheck(symbol, symbol[nextMove.id]) === true) {
           //symbol[nextMove.id] is the player: ai
           document.getElementById("result").innerText =
-            "Player " + symbol[num - 1] + " won!";
+            "Player " + symbol[nextMove.id] + " won!";
           speak("You can never win me ");
-          speak("ha ha ha");
+          speak("ha ha ");
           gameOver = true;
         }
 
@@ -205,8 +208,7 @@ window.onload = function () {
         if (turn > 9 && gameOver !== true) {
           document.getElementById("result").innerHTML =
             "GAME OVER! IT WAS A DRAW";
-          speak("Though game I will admit");
-          speak("It is a draw! ");
+          speak("A competitve game I will admit");
           return;
         }
       }
@@ -242,7 +244,7 @@ window.onload = function () {
         newSymbol[empty[i]] = player; // creates a new symbol with the player in the empty position
 
         if(player === ai ) {
-          result = miniMax(newSymbol, human);
+          result = miniMax(newSymbol, human); // [{id:4, score: -10}]
           currMove.score = result.score;
         } else {
           result = miniMax(newSymbol, ai);
@@ -251,7 +253,7 @@ window.onload = function () {
           //currMov = {id:4, score: -10}
           //possibleMov = [{id:4, score: -10}]
         }
-        newSymbol[emptyy[i]] = '';
+        newSymbol[empty[i]] = '';
         possibleMoves.push(currMove); //[{id:1, score: -10}]
     }
     // Calculate scores of intermediate states - best move + score
@@ -259,7 +261,8 @@ window.onload = function () {
     //AI - max player (always) -> choose maximum value,
     //human - min player -> choose minimum value
     if (player === ai) {
-      let highestScore = -1000
+       // possMovs [{id:1, score: -10}. {id:4, score: 10}, {id:6, score: -10}]
+      let highestScore = -1000;
       for (let j=0; j<possibleMoves.length; j++) {
         if (possibleMoves[j].score > highestScore) {
           highestScore = possibleMoves[j].score;
