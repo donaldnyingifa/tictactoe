@@ -4,7 +4,7 @@
 }
 
 html {
-  background-color: rgb(223, 224, 230);
+  background-color: rgb(84, 84, 87);
 }
 
 header {
@@ -32,7 +32,7 @@ canvas {
   display: block;
   float: left;
   border: 3px solid dodgerblue;
-  background-color: lightgoldenrodyellow;
+  background-color: #eff2f3;
   text-align: center;
 }
 
@@ -65,7 +65,7 @@ canvas {
 p {
   font-size: 26px;
   margin: 15px;
-  color: crimson;
+  color: #c3c2c2;
 }
 
 h2 {
@@ -77,23 +77,23 @@ button {
   margin-top: 25px;
   width: 200px;
   height: 50px;
-  font-size: 40px;
+  font-size: 20px;
   font-weight: 700;
   background-color: crimson;
   color: #fff;
   font-family: cursive;
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 15px;
 
   /* box-shadow: h-shadow v-shadow blur spread rgb(58, 53, 53); */
   box-shadow: 3px 2px 0.5px 1px rgb(58, 53, 53, 0.7);
 }
 
 canvas:hover {
-  background-color: rgb(223, 224, 230);
+  background-color: #acacac;
 }
 
 button:hover {
-  background: rgb(233, 18, 61);
+  background: rgb(84, 84, 87);
   cursor: pointer;
 }
