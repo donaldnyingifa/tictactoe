@@ -149,7 +149,6 @@ window.onload = function () {
             document.getElementById("result").innerHTML =
               "GAME OVER! IT WAS A DRAW";
             speak("A competitive game I will admit");
-            speak("It is a draw! ");
             return;
           }
 
