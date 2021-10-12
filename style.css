@@ -20,10 +20,10 @@ header {
   font-weight: bold;
 }
 
-h1 #result {
+#result {
   font-size: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: rgb(211, 105, 29);
+  color: rgb(147, 242, 115);
   text-align: center;
   margin-bottom: 30px;
 }
