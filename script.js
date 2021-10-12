@@ -199,7 +199,7 @@ window.onload = function () {
           document.getElementById("result").innerText =
             "Player " + symbol[nextMove.id] + " won!";
           speak("You can never win me ");
-          speak("ha ha ");
+          speak("ha ha ha");
           gameOver = true;
         }
 
