@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "ZCOOL KuaiLe", cursive;
 }
 
 html {
@@ -22,7 +23,6 @@ header {
 
 #result {
   font-size: 30px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(147, 242, 115);
   text-align: center;
   margin-bottom: 30px;
@@ -81,7 +81,6 @@ button {
   font-weight: 700;
   background-color: crimson;
   color: #fff;
-  font-family: cursive;
   border: 1px solid black;
   border-radius: 15px;
 
