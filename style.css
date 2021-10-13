@@ -25,6 +25,7 @@ header {
   color: rgb(147, 242, 115);
   text-align: center;
   margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 canvas {
